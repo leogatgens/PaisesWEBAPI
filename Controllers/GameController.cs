@@ -14,8 +14,9 @@ namespace PaisesWEBAPI.Controllers
         {
             List<Pais> paisesEuropa = ObtieneEuropePaises();
             List<Pais> paisesAmerica = ObtienePaisesDeAmerica();
+            List<Pais> paisesAsia = ObtienePaisesDeAsia();
 
-            List<Pais> finalList = paisesEuropa.Concat(paisesAmerica).ToList();
+            List<Pais> finalList = paisesEuropa.Concat(paisesAmerica).Concat(paisesAsia).ToList();
             //System.Threading.Thread.Sleep(2000);
             return Ok(finalList);
 
@@ -30,7 +31,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 90,
                     Name = "Alemania",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/germany-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/germany-flag-button-square-xs.png",
 
                 },
                 new Pais
@@ -38,7 +39,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 91,
                     Name = "España",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/spain-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/spain-flag-button-square-xs.png",
 
                 },
                 new Pais
@@ -46,7 +47,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 92,
                     Name = "Portugal",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/portugal-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/portugal-flag-button-square-xs.png",
 
                 },
                  new Pais
@@ -54,7 +55,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 93,
                     Name = "Francia",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/france-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/france-flag-button-square-xs.png",
 
                 },
                   new Pais
@@ -62,7 +63,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 94,
                     Name = "Russia",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/russia-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/russia-flag-button-square-xs.png",
 
                 },
                    new Pais
@@ -70,7 +71,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 95,
                     Name = "Inglaterra",
                     Continent = "Europe",
-                    FlagUrl = "http://localhost:3000/img/united-kingdom-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/united-kingdom-flag-button-square-xs.png",
 
                 }
             };
@@ -84,7 +85,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 1,
                     Name = "Argentina",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/argentina-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/argentina-flag-button-square-xs.png",
 
                 },
                 new Pais
@@ -92,7 +93,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 2,
                     Name = "Brazil",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/brazil-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/brazil-flag-button-square-xs.png",
 
                 },
                 new Pais
@@ -100,14 +101,14 @@ namespace PaisesWEBAPI.Controllers
                     Id = 3,
                     Name = "Costa Rica",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/costa-rica-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/costa-rica-flag-button-square-xs.png",
 
                 },
                  new Pais
                 {
                     Name = "Uruguay",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/uruguay-flag-3d-xs.png",
+                    FlagUrl = "##CDN##/uruguay-flag-3d-xs.png",
 
                 },
                   new Pais
@@ -115,7 +116,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 4,
                     Name = "Paraguay",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/paraguay-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/paraguay-flag-button-square-xs.png",
 
                 },
                    new Pais
@@ -123,7 +124,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 5,
                     Name = "Colombia",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/colombia-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/colombia-flag-button-square-xs.png",
 
                 },
                 new Pais
@@ -131,7 +132,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 6,
                     Name = "Peru",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/notfound.png",
+                    FlagUrl = "##CDN##/notfound.png",
 
                 },
                 new Pais
@@ -139,7 +140,7 @@ namespace PaisesWEBAPI.Controllers
                     Id = 7,
                     Name = "Bolivia",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/notfound.png",
+                    FlagUrl = "##CDN##/notfound.png",
 
                 },
                 new Pais
@@ -147,12 +148,35 @@ namespace PaisesWEBAPI.Controllers
                     Id = 8,
                     Name = "Venezuela",
                     Continent = "America",
-                    FlagUrl = "http://localhost:3000/img/notfound.png",
+                    FlagUrl = "##CDN##/notfound.png",
 
                 }
             };
         }
 
+        private static List<Pais> ObtienePaisesDeAsia()
+        {
+            return new List<Pais>
+            {
+                new Pais
+                {
+                    Id = 1,
+                    Name = "China",
+                    Continent = "Asia",
+                    FlagUrl = "##CDN##/argentina-flag-button-square-xs.png",
+
+                },
+                new Pais
+                {
+                    Id = 2,
+                    Name = "Japan",
+                    Continent = "Asia",
+                    FlagUrl = "##CDN##/japan-flag-button-square-xs.png",
+
+                },
+
+            };
+        }
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
