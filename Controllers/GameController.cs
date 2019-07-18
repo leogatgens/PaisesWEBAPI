@@ -160,18 +160,34 @@ namespace PaisesWEBAPI.Controllers
             {
                 new Pais
                 {
-                    Id = 1,
+                    Id = 50,
                     Name = "China",
                     Continent = "Asia",
-                    FlagUrl = "##CDN##/argentina-flag-button-square-xs.png",
+                    FlagUrl = "##CDN##/china-flag-button-square-xs.png",
 
                 },
                 new Pais
                 {
-                    Id = 2,
+                    Id = 51,
                     Name = "Japan",
                     Continent = "Asia",
                     FlagUrl = "##CDN##/japan-flag-button-square-xs.png",
+
+                },
+                  new Pais
+                {
+                    Id = 52,
+                    Name = "Arabia Saudita",
+                    Continent = "Asia",
+                    FlagUrl = "##CDN##/notfound.png",
+
+                },
+                          new Pais
+                {
+                    Id = 53,
+                    Name = "Corea del Sur ",
+                    Continent = "Asia",
+                    FlagUrl = "##CDN##/notfound.png",
 
                 },
 
