@@ -20,7 +20,7 @@ namespace PaisesWEBAPI.Services
 
         IEnumerable<TablaDMPrep> IReportesRepository.ListReportOne()
         {
-          return  datacontext.TablaDMPrep.Take(500000).ToList();
+          return  datacontext.TablaDMPrep.Take(5000).ToList();
         }
 
         bool IReportesRepository.Save()

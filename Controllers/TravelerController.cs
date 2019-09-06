@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaisesWEBAPI.Converters;
 using PaisesWEBAPI.Models;
@@ -9,6 +10,8 @@ namespace PaisesWEBAPI.Controllers
     [Route("api/travelers")]
     [Produces("application/json")]
     [Consumes("application/json")]
+    [ApiController]
+    //[Authorize]
     public class TravelerController : Controller
     {
 

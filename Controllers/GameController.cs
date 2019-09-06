@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,7 @@ namespace PaisesWEBAPI.Controllers
 {
     [Route("api/game/paises")]
     [ApiController]
+    //[Authorize]
     public class GameController : ControllerBase
     {
         // GET api/values

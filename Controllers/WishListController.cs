@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaisesWEBAPI.Converters;
 using PaisesWEBAPI.Models.Dto;
@@ -9,6 +10,7 @@ namespace PaisesWEBAPI.Controllers
 {
     [Route("api/travelers/{travelerId}/wishlists")]
     [ApiController]
+    //[Authorize]
     public class WishListController : Controller
     {
 

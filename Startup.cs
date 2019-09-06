@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +40,21 @@ namespace PaisesWEBAPI
             services.AddScoped<IConverter, Converter>();
 
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "https://leogatgens.auth0.com/";
+                options.Audience = "https://leogatgensAPI";
+            });
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("read:messages", policy => policy.Requirements.Add(new HasScopeRequirement("read:messages", domain)));
+            //});
+
+
             // Add S3 to the ASP.NET Core dependency injection framework.
             services.AddAWSService<Amazon.S3.IAmazonS3>();
         }
@@ -57,7 +73,7 @@ namespace PaisesWEBAPI
             });
 
             app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:3000", "http://youtripyouwish.s3-website.us-east-2.amazonaws.com")
+            builder.WithOrigins("http://localhost:3000", "http://diaroviajero.com", "https://diaroviajero.com", "http://172.16.73.123:3000")
            .AllowAnyHeader()
            .AllowAnyMethod()
        );
@@ -71,8 +87,18 @@ namespace PaisesWEBAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.UseStaticFiles();
+
+            // 2. Enable authentication middleware
+            app.UseAuthentication();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                  name: "default",
+                  template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

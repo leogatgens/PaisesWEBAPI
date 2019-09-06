@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaisesWEBAPI.Converters;
 using PaisesWEBAPI.Models.Dto;
@@ -8,6 +9,8 @@ using System.Collections.Generic;
 namespace PaisesWEBAPI.Controllers
 {
     [Route("api/travelers/{travelerId}/trips")]
+    [ApiController]
+    [Authorize]
     public class TripController : Controller
     {
         private readonly ITripsRepository TripsRepository;
